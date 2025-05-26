@@ -1,0 +1,143 @@
+body{
+	margin:0;
+	padding:25px;
+	font-family:Arial;
+	font-size:14px;
+}
+
+/* Forecast */
+.forecast{
+	width:120px;
+	height:40px;
+	margin:0 auto;
+}
+
+.forecast div{
+	position:relative;
+	width:40px;
+	height:40px;
+	float:left;
+}
+
+.forecast div:before{
+	content:"";
+	position:absolute;
+	top:5px;
+	left:5px;
+	width:30px;
+	height:30px;
+	border-radius:100px;
+}
+
+
+/* Grid */
+.grid{
+	margin:25px auto;
+	position:relative;
+	width:450px;
+	height:450px;
+}
+
+.grid div{
+	position:absolute;
+	width:50px;
+	height:50px;
+	box-sizing:border-box;
+	background:#757575;
+	border:1px outset #ccc;
+}
+
+.grid div:before{
+	content:"";
+	position:absolute;
+	top:0px;
+	left:1px;
+	width:47px;
+	height:47px;
+	box-sizing:border-box;
+	border-radius:0px;
+}
+
+.grid .ball{cursor:pointer;}
+.empty:before{background:transparent;}
+
+
+/* Ball colors */
+.red:before{
+	background-image: url("red.png");
+	background-size: cover;
+}
+
+.blue:before{
+	background-image: url("blue.png");
+	background-size: cover;
+}
+
+.green:before{
+	background-image: url("green.png");
+	background-size: cover;
+}
+
+.yellow:before{
+	background-image: url("yellow.png");
+	background-size: cover;
+}
+
+.brown:before{
+	background-image: url("orange.png");
+	background-size: cover;	
+}
+
+.cyan:before{
+	background-image: url("gray.png");
+	background-size: cover;	
+}
+
+.magenta:before{
+	background-image: url("purple.png"); 	
+	background-size: cover;
+}
+
+
+/* Ball effects */
+.ball.fadein:before{-webkit-animation:fadein 0.3s; animation:fadein 0.3s;}
+.ball.fadeout:before{-webkit-animation:fadeout 0.3s; animation:fadeout 0.3s;}
+
+@-webkit-keyframes fadein{
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@keyframes fadein{
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeout{
+	0% {opacity:1;}
+	100% {opacity:0;}
+}
+
+@keyframes fadeout{
+	0% {opacity:1;}
+	100% {opacity:0;}
+}
+
+.ball.selected:before{
+	-webkit-animation:jumping 0.5s;
+	-webkit-animation-iteration-count: infinite;
+	animation:jumping 0.5s;
+	animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes jumping{
+	0% {top:0px;}
+	50% {top:2px;}
+	100% {top:0px;}
+}
+
+@keyframes jumping{
+	0% {top:0px;}
+	50% {top:2px;}
+	100% {top:0px;}
+}
